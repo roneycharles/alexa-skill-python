@@ -1,0 +1,82 @@
+{
+  "interactionModel": {
+      "languageModel": {
+          "invocationName": "projeto moaci",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "HelloWorldIntent",
+                  "slots": [],
+                  "samples": [
+                      "Como vai",
+                      "Tudo bem",
+                      "Oi",
+                      "Olá"
+                  ]
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              },
+              {
+                  "name": "MyNameIsIntent",
+                  "slots": [
+                      {
+                          "name": "nome",
+                          "type": "AMAZON.FirstName"
+                      }
+                  ],
+                  "samples": [
+                      "meu nome é {nome}",
+                      "É {nome}",
+                      "{nome} é meu nome"
+                  ]
+              }
+          ],
+          "types": []
+      },
+      "dialog": {
+          "intents": [
+              {
+                  "name": "MyNameIsIntent",
+                  "confirmationRequired": true,
+                  "prompts": {
+                      "confirmation": "Confirm.Intent.526052761117"
+                  },
+                  "slots": [
+                      {
+                          "name": "nome",
+                          "type": "AMAZON.FirstName",
+                          "confirmationRequired": false,
+                          "elicitationRequired": false,
+                          "prompts": {}
+                      }
+                  ]
+              }
+          ],
+          "delegationStrategy": "ALWAYS"
+      },
+      "prompts": [
+          {
+              "id": "Confirm.Intent.526052761117",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "Oi {nome} é um prazer conhecê-lo"
+                  }
+              ]
+          }
+      ]
+  }
+}
